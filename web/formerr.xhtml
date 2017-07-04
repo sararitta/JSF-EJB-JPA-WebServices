@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+<%@page import="br.tche.ucpel.bd2.bean.cadastroos"%>
+<%@page import="br.tche.ucpel.bd2.bean.Cliente"%>
+<%@page import="java.util.List"%>
+<%@page errorPage="formerro.jsp"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Teste">
+        <title>Protótipo Cadastros Java</title>
+        <link rel="stylesheet" href="https://unpkg.com/purecss@0.6.2/build/pure-min.css" integrity="sha384-" crossorigin="anonymous">
+        <link rel="stylesheet" href="./css/menu.css" >
+        <link rel="stylesheet" href="./css/default.css">
+        <link rel="stylesheet" href="./css/error.css">
+        <link rel="stylesheet" href="https://unpkg.com/purecss@0.6.2/build/grids-responsive-min.css">
+    </head>
+    <body>
+        <ui:include src="header.xhtml"/>
+        <div class="basePopupErr">
+            <div class="popupErr">
+                <h2>Falha no sistema</h2>
+                <div class="content">
+                    <%
+                        String mensagem = (String) request.getAttribute("mensagem");
+                        if (mensagem != null) {
+                            out.write(mensagem);
+                        }
+                    %>
+                </div>
+                <div class="popupErrButton">
+                    <a  class="popupErrButtonLink" href="index.jsp">Tentar Novamente</a>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

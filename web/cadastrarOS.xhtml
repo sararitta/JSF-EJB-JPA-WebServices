@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta name="description" content="Teste"/>
+        <title>Protótipo Cadastros Java</title>
+        <link rel="stylesheet" href="https://unpkg.com/purecss@0.6.2/build/pure-min.css" integrity="sha384-" crossorigin="anonymous"/>
+        <link rel="stylesheet" href="./css/menu.css" />
+        <link rel="stylesheet" href="./css/tables.css"/>
+        <link rel="stylesheet" href="./css/default.css"/>
+        <link rel="stylesheet" href="./css/error.css"/>
+        <link rel="stylesheet" href="https://unpkg.com/purecss@0.6.2/build/grids-responsive-min.css"/>
+    </head>
+    <script type="text/javascript">
+    </script>
+
+    <h:body>
+        <h:form>
+            <p:panelGrid columns="3">
+
+                <f:facet name="header" >
+                    <p:graphicImage value="image/ck.png"  height="200px"/>
+                </f:facet>
+
+                <h:outputText value="Cod OS:" style="color: red"/>
+                <h:inputText id="codOS" value="#{cadastroosMNG.codOS}" />
+                <h:message for="codOS" styleClass="error"/>
+                <h:outputText value="Descrição Equipamento:" style="color: red"/>
+                <h:inputText id="descricaoEquipamento" value="#{cadastroosMNG.descricaoEquipamento}" />
+                <h:message for="descricaoEquipamento" styleClass="error"/>
+                <h:outputText value="Marca:" style="color: red"/>
+                <h:inputText  id="marca" value="#{cadastroosMNG.marca}" />
+                <h:message for="marca" styleClass="error"/>
+                <h:outputText value="Modelo:" style="color: red"/>
+                <h:inputText  id="modelo" value="#{cadastroosMNG.modelo}" />
+                <h:message for="modelo" styleClass="error"/>
+                <h:outputText value="Outros:" style="color: red"/>
+                <h:inputText  id="outros" value="#{cadastroosMNG.outros}" />
+                <h:message for="outros" styleClass="error"/>
+                <h:outputText value="Problema Informado:" style="color: red"/>
+                <h:inputText id="problemaInformado" value="#{cadastroosMNG.problemaInformado}" />
+                <h:message for="problemaInformado" styleClass="error"/>
+                <h:outputText value="Problema Detectado:" style="color: red"/>
+                <h:inputText id="problemaDetectado" value="#{cadastroosMNG.problemaDetectado}" />
+                <h:message for="problemaDetectado" styleClass="error"/>
+                <h:outputText value="Valor Conserto:" style="color: red"/>
+                <h:inputText id="valorConserto" value="#{cadastroosMNG.valorConserto}" />
+                <h:message for="valorConserto" styleClass="error"/>
+                <h:outputText value="Data de Entrada:" style="color: red"/>
+                <h:inputText id="dataEntrada" value="#{cadastroosMNG.dataEntrada}" required="true">
+                    <f:convertDateTime pattern="dd/MM/yyyy"/>  
+                </h:inputText>
+                <h:message for="dataEntrada" styleClass="error"/>
+                <h:outputText value="Data de Entrega:" style="color: red"/>
+                <h:inputText id="dataSaida" value="#{cadastroosMNG.dataSaida}" required="true">
+                    <f:convertDateTime pattern="dd/MM/yyyy"/>  
+                </h:inputText>
+                <h:message for="dataSaida" styleClass="error"/>
+                <h:outputText value="Status conserto realizado:" style="color: red"/>
+                <h:inputText id="consertoRealizado" value="#{cadastroosMNG.consertoRealizado}" required="true"/>
+                <h:message for="consertoRealizado" styleClass="error"/>
+                <h:outputText value="Cod do Cliente:"  style="color: red"/>
+                <h:inputText id="codCliente" value="#{cadastroosMNG.codCliente}"  required="true" />
+                <h:message for="codCliente" styleClass="error"/>
+                <h:commandButton  value="Salvar" action="#{cadastroosMNG.save()}"/>
+            </p:panelGrid>
+        </h:form>
+    </h:body>
+</html>

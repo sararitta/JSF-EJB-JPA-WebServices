@@ -1,0 +1,89 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta name="description" content="Teste"/>
+        <title>Protótipo Cadastros Java</title>
+        <link rel="stylesheet" href="https://unpkg.com/purecss@0.6.2/build/pure-min.css" integrity="sha384-" crossorigin="anonymous"/>
+        <link rel="stylesheet" href="./css/menu.css" />
+        <link rel="stylesheet" href="./css/tables.css"/>
+        <link rel="stylesheet" href="./css/default.css"/>
+        <link rel="stylesheet" href="https://unpkg.com/purecss@0.6.2/build/grids-responsive-min.css"/>
+    </head>
+    <script type="text/javascript">
+    </script>
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <f:facet name="header" >
+            <p:graphicImage value="image/ck.png"  height="200px"/>
+        </f:facet>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <h:form prependId="false">
+            <p:dataTable id="dataTable" var="os"
+                         value="#{cadastroosMNG.lista}" paginator="false" rows="1"
+                         paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+                         rowsPerPageTemplate="1,5,10" emptyMessage="Não há compras cadastradas.">
+                <f:facet name="header">  
+                    Ordem de serviço
+                </f:facet>
+                <p:column headerText="Cod">
+                    <h:outputText value="#{os.cod}" />
+                </p:column>
+                <p:column headerText="Descrição Equipamento">
+                    <h:outputText value="#{os.descricaoequipamento}" />
+                </p:column>
+                <p:column headerText="Marca">
+                    <h:outputText value="#{os.marca}" />
+                </p:column>
+                <p:column headerText="Modelo">
+                    <h:outputText value="#{os.modelo}" />
+                </p:column>
+                <p:column headerText="Outros">
+                    <h:outputText value="#{os.outros}" />
+                </p:column>
+                <p:column headerText="Problema Informado">
+                    <h:outputText value="#{os.descricaoproblemainformado}" />
+                </p:column>
+                <p:column headerText="Problema Detectado">
+                    <h:outputText value="#{os.descricaoproblemadetectado}" />
+                </p:column>
+                <p:column headerText="Valor de Conserto">
+                    <h:outputText value="#{os.valorconserto}" />
+                </p:column>
+                <p:column headerText="Previsão de Entrega">
+                    <h:outputText value="#{os.dtsaida}" />
+                </p:column>
+                <p:column headerText="Data de Entrada">
+                    <h:outputText value="#{os.dtentrada}" />
+                </p:column>
+                <p:column headerText="Status Conserto">
+                    <h:outputText value="#{os.consertorealizado}" />
+                </p:column>
+            </p:dataTable>
+        </h:form>
+        <h:form> 
+            <p:growl id="growl" showDetail="true" sticky="true" />  
+            <p:panel header="Calcula Frete">  
+                <h:panelGrid columns="2" cellpadding="5">  
+                    <p:outputLabel for="msg" value="Informe seu CEP:" />   
+                    <p:inputText id="msg" value="#{login.msg}" required="true" />  
+                </h:panelGrid>         
+                <p:commandButton value="Consultar" actionListener="#{login.consultaCEP(event)}" update="growl" />    
+                
+            </p:panel>   
+        </h:form> 
+    </h:body>
+</html>
+

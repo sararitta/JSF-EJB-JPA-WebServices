@@ -1,0 +1,69 @@
+/* 
+    Created on : Apr 10, 2017, 4:54:52 PM
+    Author     : mertins
+*/
+
+.basePopupErr {
+    position: fixed;
+    top: 0px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    transition: opacity 500ms;
+    display: block;
+    opacity: 100;
+    z-index: 1000;
+}
+
+.popupErr {
+    margin: auto;
+    margin-top: 60px;
+    padding: 20px;
+    background: #fff;
+    border-radius: 5px;
+    width: 80%;
+    position: relative;
+    transition: all 5s ease-in-out;
+
+}
+
+.popupErr h2 {
+    margin-top: 0;
+    color: #333;
+    font-family: Tahoma, Arial, sans-serif;
+}
+
+.popupErr .content {
+    max-height: 30%;
+    overflow: auto;
+}
+
+.popupErrButton {
+    margin-top: 20px;
+    font-size: 1em;
+    color: #fff;
+    border: 2px solid #4a77d4;
+    border-radius: 20px/50px;
+    cursor: pointer;
+    transition: all 0.3s ease-out;
+    width: 20%;
+    text-align: center;
+}
+.popupErrButtonLink{
+    text-decoration: none;
+    border-radius: 20px/50px;
+}
+
+.popupErrButton:hover {
+    background: #4a77d4;
+    color: blue;
+}
+
+
+.error { 
+    background-color: red;
+    border-radius: 14px;
+    padding: 0.2em;
+    
+}
